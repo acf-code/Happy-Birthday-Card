@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Stylesheet -->
+    <style>
+      /* The Outer Page of the Card */
+      #outside {
+        z-index: 1;
+        position: absolute;
+        background-color: rgb(131, 235, 131);
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 1s;
+        transform-origin: 0;
+      }
+
+      #outside-title {
+        color: black;
+        font-family: "Comic Sans MS", Courier, monospace;
+        font-size: 16pt;
+        text-align: center;
+      }
+
+      #outside-pic {
+        width: 200px;
+        height: 200px;
+      }
+
+      /* Opening the Card */
+      .open-card {
+        transform: rotateY(90deg);
+      }
+
+      /* The Inner Page of the Card */
+      #inside {
+        z-index: 0;
+        position: absolute;
+        background-color: rgb(217, 234, 250);
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+
+      #inside-title {
+        color: rgb(84, 30, 135);
+        font-family: "Tahoma";
+        font-size: 20pt;
+        text-align: center;
+      }
+
+      #inside-pic {
+        width: 250px;
+      }
+
+      #message {
+        color: rgb(23, 23, 144);
+        font-family: "Courier";
+        font-size: 12pt;
+        text-align: center;
+      }
+
+      /* Buttons */
+      button {
+        background-color: rgb(255, 251, 0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- The Outer Page of the Card -->
+    <div id="outside">
+      <h1 id="outside-title">Happy Birth Day!!!</h1>
+
+      <img id="outside-pic" src="assets/robot.gif" alt="Cat Robot" />
+
+      <!-- Opening Button -->
+      <p>
+        <button onclick="open_card()">Click to Open</button>
+      </p>
+    </div>
+
+    <!-- The Inner Page of the Card -->
+    <div id="inside">
+      <h1 id="inside-title">Happy Birth Day, Swatilekha!!</h1>
+
+      <img id="inside-pic" src="assets/girl.gif" alt="Cat Girl" />
+
+      <p id="message">
+        Hi. Your name is Swatilekha! You like <b>reading</b> and
+        <i>riding my skateboard</i>.
+        <b><u>Your birthday is on 5th. January.</u></b>
+        <br />
+        Sending lots of love! ❤️
+      </p>
+
+      <!-- Closing Button -->
+      <p>
+        <button onclick="close_card()">Click to Close</button>
+      </p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Opening the Card
+      function open_card() {
+        outside_div = document.querySelector("#outside");
+        outside_div.className = "open-card";
+      }
+
+      // Closing the Card
+      function close_card() {
+        inside_div = document.querySelector("#outside");
+        inside_div.className = "";
+      }
+    </script>
+  </body>
+</html>
